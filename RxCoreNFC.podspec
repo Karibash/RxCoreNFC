@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.source_files       = "Sources/**/*.{swift}"
   spec.requires_arc       = true
   spec.swift_version      = "5.0"
-  spec.frameworks         = "Foundation
+  spec.frameworks         = "Foundation", "CoreNFC"
   spec.dependency           "RxSwift", "~> 5.0"
   spec.dependency           "RxCocoa", "~> 5.0"
 end
