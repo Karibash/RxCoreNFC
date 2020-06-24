@@ -11,6 +11,8 @@
 		E6A2A5F0249CA89600282503 /* RxCoreNFC.h in Headers */ = {isa = PBXBuildFile; fileRef = E6A2A5EF249CA89600282503 /* RxCoreNFC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6A2A5F3249CD9D800282503 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A2A5F2249CD9D800282503 /* RxSwift.framework */; };
 		E6A2A5F7249CDA5400282503 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A2A5F6249CDA5400282503 /* RxCocoa.framework */; };
+		E6A2A60E24A377A300282503 /* RxNFCTagReaderSessionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A60B24A377A300282503 /* RxNFCTagReaderSessionEvent.swift */; };
+		E6A2A60F24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A60C24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift */; };
 		E6BF06EC249C9D82007E84D3 /* RxCoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		E6A2A5EF249CA89600282503 /* RxCoreNFC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxCoreNFC.h; sourceTree = "<group>"; };
 		E6A2A5F2249CD9D800282503 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		E6A2A5F6249CDA5400282503 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		E6A2A60B24A377A300282503 /* RxNFCTagReaderSessionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNFCTagReaderSessionEvent.swift; sourceTree = "<group>"; };
+		E6A2A60C24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNFCTagReaderSessionDelegateProxy.swift; sourceTree = "<group>"; };
 		E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCoreNFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BF06EB249C9D82007E84D3 /* RxCoreNFCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCoreNFCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,8 +79,9 @@
 		E67C0DFD249CA1F200C713AF /* RxCoreNFC */ = {
 			isa = PBXGroup;
 			children = (
-				E6A2A5EF249CA89600282503 /* RxCoreNFC.h */,
+				E6A2A60424A21B0E00282503 /* NFCTagReader */,
 				E615918B249CA53B00E07113 /* Supporting Files */,
+				E6A2A5EF249CA89600282503 /* RxCoreNFC.h */,
 			);
 			name = RxCoreNFC;
 			path = Sources;
@@ -99,6 +104,15 @@
 				E6A2A5F2249CD9D800282503 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6A2A60424A21B0E00282503 /* NFCTagReader */ = {
+			isa = PBXGroup;
+			children = (
+				E6A2A60C24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift */,
+				E6A2A60B24A377A300282503 /* RxNFCTagReaderSessionEvent.swift */,
+			);
+			path = NFCTagReader;
 			sourceTree = "<group>";
 		};
 		E6BF06D8249C9D82007E84D3 = {
@@ -230,6 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6A2A60F24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift in Sources */,
+				E6A2A60E24A377A300282503 /* RxNFCTagReaderSessionEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
