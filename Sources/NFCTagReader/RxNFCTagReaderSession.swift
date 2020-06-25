@@ -123,3 +123,30 @@ extension RxNFCTagReaderSession {
     }
     
 }
+
+extension RxNFCTagReaderSession {
+    
+    // MARK: - Triggers -
+    
+    public var begin: AnyObserver<Void> {
+        AnyObserver<Void> { [unowned self] event in
+            guard case .next(_) = event else { return }
+            self.session.begin()
+        }
+    }
+    
+    public var invalidate: AnyObserver<Void> {
+        AnyObserver<Void> { [unowned self] event in
+            guard case .next(_) = event else { return }
+            self.session.invalidate()
+        }
+    }
+    
+    public var restartPolling: AnyObserver<Void> {
+        AnyObserver<Void> { [unowned self] event in
+            guard case .next(_) = event else { return }
+            self.session.restartPolling()
+        }
+    }
+    
+}
