@@ -74,7 +74,7 @@ extension RxNFCTagReaderSession {
     
     // MARK: - Tags -
     
-    public var nfcTags: Observable<NFCTag> {
+    public var tags: Observable<NFCTag> {
         delegate.flatMap { (event) -> Observable<NFCTag> in
             guard case let .didDetect(event) = event else {
                 return Observable.empty()
@@ -83,42 +83,6 @@ extension RxNFCTagReaderSession {
                 event.tags.forEach { observer.onNext($0) }
                 return Disposables.create()
             }
-        }
-    }
-    
-    public var felicaTags: Observable<NFCFeliCaTag> {
-        nfcTags.flatMap { (tag) -> Observable<NFCFeliCaTag> in
-            guard case let .feliCa(tag) = tag else {
-                return Observable.empty()
-            }
-            return Observable.of(tag)
-        }
-    }
-    
-    public var iso7816Tags: Observable<NFCISO7816Tag> {
-        nfcTags.flatMap { (tag) -> Observable<NFCISO7816Tag> in
-            guard case let .iso7816(tag) = tag else {
-                return Observable.empty()
-            }
-            return Observable.of(tag)
-        }
-    }
-    
-    public var iso15693Tags: Observable<NFCISO15693Tag> {
-        nfcTags.flatMap { (tag) -> Observable<NFCISO15693Tag> in
-            guard case let .iso15693(tag) = tag else {
-                return Observable.empty()
-            }
-            return Observable.of(tag)
-        }
-    }
-    
-    public var miFareTags: Observable<NFCMiFareTag> {
-        nfcTags.flatMap { (tag) -> Observable<NFCMiFareTag> in
-            guard case let .miFare(tag) = tag else {
-                return Observable.empty()
-            }
-            return Observable.of(tag)
         }
     }
     

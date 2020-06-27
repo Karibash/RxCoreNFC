@@ -20,6 +20,7 @@
 		E6A2A61824A62CDC00282503 /* NFCISO15693Tag+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A61724A62CDC00282503 /* NFCISO15693Tag+Rx.swift */; };
 		E6A2A61A24A62D5400282503 /* RxNFCReaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A61924A62D5400282503 /* RxNFCReaderError.swift */; };
 		E6A2A61C24A631B400282503 /* NFCMiFareTag+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A61B24A631B400282503 /* NFCMiFareTag+Rx.swift */; };
+		E6A2A61F24A7878000282503 /* NFCTag+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A61E24A7878000282503 /* NFCTag+Rx.swift */; };
 		E6BF06EC249C9D82007E84D3 /* RxCoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		E6A2A61724A62CDC00282503 /* NFCISO15693Tag+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NFCISO15693Tag+Rx.swift"; sourceTree = "<group>"; };
 		E6A2A61924A62D5400282503 /* RxNFCReaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCReaderError.swift; sourceTree = "<group>"; };
 		E6A2A61B24A631B400282503 /* NFCMiFareTag+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NFCMiFareTag+Rx.swift"; sourceTree = "<group>"; };
+		E6A2A61E24A7878000282503 /* NFCTag+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NFCTag+Rx.swift"; sourceTree = "<group>"; };
 		E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCoreNFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BF06EB249C9D82007E84D3 /* RxCoreNFCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCoreNFCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				E6A2A60C24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift */,
 				E6A2A60B24A377A300282503 /* RxNFCTagReaderSessionEvent.swift */,
 				E6A2A61124A42BF400282503 /* NFCTagReaderSession+Rx.swift */,
+				E6A2A61E24A7878000282503 /* NFCTag+Rx.swift */,
 				E6A2A61324A6271000282503 /* NFCFeliCaTag+Rx.swift */,
 				E6A2A61524A6275500282503 /* NFCISO7816Tag+Rx.swift */,
 				E6A2A61724A62CDC00282503 /* NFCISO15693Tag+Rx.swift */,
@@ -275,6 +278,7 @@
 			files = (
 				E6A2A61824A62CDC00282503 /* NFCISO15693Tag+Rx.swift in Sources */,
 				E6A2A61424A6271000282503 /* NFCFeliCaTag+Rx.swift in Sources */,
+				E6A2A61F24A7878000282503 /* NFCTag+Rx.swift in Sources */,
 				E6A2A61024A377A300282503 /* RxNFCTagReaderSession.swift in Sources */,
 				E6A2A60F24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift in Sources */,
 				E6A2A61224A42BF400282503 /* NFCTagReaderSession+Rx.swift in Sources */,
