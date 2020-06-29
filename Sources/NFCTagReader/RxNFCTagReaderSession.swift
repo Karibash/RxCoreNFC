@@ -92,24 +92,27 @@ extension RxNFCTagReaderSession {
     
     // MARK: - Triggers -
     
-    public var begin: AnyObserver<Void> {
-        AnyObserver<Void> { [unowned self] event in
-            guard case .next(_) = event else { return }
+    public var begin: Single<RxNFCTagReaderSession> {
+        Single.create { observer in
             self.session.begin()
+            observer(.success(self))
+            return Disposables.create()
         }
     }
     
-    public var invalidate: AnyObserver<Void> {
-        AnyObserver<Void> { [unowned self] event in
-            guard case .next(_) = event else { return }
+    public var invalidate: Single<RxNFCTagReaderSession> {
+        Single.create { observer in
             self.session.invalidate()
+            observer(.success(self))
+            return Disposables.create()
         }
     }
     
-    public var restartPolling: AnyObserver<Void> {
-        AnyObserver<Void> { [unowned self] event in
-            guard case .next(_) = event else { return }
+    public var restartPolling: Single<RxNFCTagReaderSession> {
+        Single.create { observer in
             self.session.restartPolling()
+            observer(.success(self))
+            return Disposables.create()
         }
     }
     
