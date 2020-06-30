@@ -10,21 +10,4 @@ import CoreNFC
 import RxSwift
 
 extension ObservableType where Element == NFCMiFareTag {
-    
-    public var connect: Observable<Element> {
-        flatMap { tag in
-            return Single<Element>.create { observer in
-                guard let session = tag.session as? NFCTagReaderSession else {
-                    observer(.error(RxNFCReaderError.readerSessionRetrieveError))
-                    return Disposables.create()
-                }
-                session.connect(
-                    to: .miFare(tag),
-                    completionHandler: { _ in observer(.success(tag)) }
-                )
-                return Disposables.create()
-            }
-        }
-    }
-    
 }

@@ -117,3 +117,74 @@ extension RxNFCTagReaderSession {
     }
     
 }
+
+extension RxNFCTagReaderSession {
+    
+    // MARK: - Connect -
+    
+    public func connect(_ tag: NFCTag) -> Single<NFCTag> {
+        Single.create { observer in
+            self.session.connect(to: tag, completionHandler: { error in
+                if error != nil {
+                    observer(.error(error!))
+                } else {
+                    observer(.success(tag))
+                }
+            })
+            return Disposables.create()
+        }
+    }
+    
+    public func connect(_ tag: NFCFeliCaTag) -> Single<NFCFeliCaTag> {
+        Single.create { observer in
+            self.session.connect(to: .feliCa(tag), completionHandler: { error in
+                if error != nil {
+                    observer(.error(error!))
+                } else {
+                    observer(.success(tag))
+                }
+            })
+            return Disposables.create()
+        }
+    }
+    
+    public func connect(_ tag: NFCISO7816Tag) -> Single<NFCISO7816Tag> {
+        Single.create { observer in
+            self.session.connect(to: .iso7816(tag), completionHandler: { error in
+                if error != nil {
+                    observer(.error(error!))
+                } else {
+                    observer(.success(tag))
+                }
+            })
+            return Disposables.create()
+        }
+    }
+    
+    public func connect(_ tag: NFCISO15693Tag) -> Single<NFCISO15693Tag> {
+        Single.create { observer in
+            self.session.connect(to: .iso15693(tag), completionHandler: { error in
+                if error != nil {
+                    observer(.error(error!))
+                } else {
+                    observer(.success(tag))
+                }
+            })
+            return Disposables.create()
+        }
+    }
+
+    public func connect(_ tag: NFCMiFareTag) -> Single<NFCMiFareTag> {
+        Single.create { observer in
+            self.session.connect(to: .miFare(tag), completionHandler: { error in
+                if error != nil {
+                    observer(.error(error!))
+                } else {
+                    observer(.success(tag))
+                }
+            })
+            return Disposables.create()
+        }
+    }
+    
+}
