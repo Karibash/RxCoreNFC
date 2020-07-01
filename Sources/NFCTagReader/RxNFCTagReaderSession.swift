@@ -21,7 +21,7 @@ public final class RxNFCTagReaderSession {
     
     // MARK: - Constructor -
     
-    public init(pollingOption: NFCTagReaderSession.PollingOption) {
+    internal init(pollingOption: NFCTagReaderSession.PollingOption) {
         let proxy = RxNFCTagReaderSessionDelegateProxy()
         delegate = proxy.subject.asObservable()
         session = NFCTagReaderSession(pollingOption: pollingOption, delegate: proxy)!
