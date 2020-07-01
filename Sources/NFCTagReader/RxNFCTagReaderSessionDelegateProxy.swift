@@ -9,6 +9,7 @@
 import CoreNFC
 import RxSwift
 
+@available(iOS 13.0, *)
 final class RxNFCTagReaderSessionDelegateProxy: NSObject, NFCTagReaderSessionDelegate {
     
     let subject = PublishSubject<RxNFCTagReaderSessionEvent>()

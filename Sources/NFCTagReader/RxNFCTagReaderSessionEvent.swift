@@ -8,10 +8,16 @@
 
 import CoreNFC
 
+@available(iOS 13.0, *)
 public typealias RxNFCDidBecomeActiveEvent = (NFCTagReaderSession)
+
+@available(iOS 13.0, *)
 public typealias RxNFCDidErrorEvent = (session: NFCTagReaderSession, error: Error)
+
+@available(iOS 13.0, *)
 public typealias RxNFCDidDetectEvent = (session: NFCTagReaderSession, tags: [NFCTag])
 
+@available(iOS 13.0, *)
 public enum RxNFCTagReaderSessionEvent {
     case didBecomeActive(RxNFCDidBecomeActiveEvent)
     case didError(RxNFCDidErrorEvent)

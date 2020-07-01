@@ -9,6 +9,7 @@
 import CoreNFC
 import RxSwift
 
+@available(iOS 13.0, *)
 extension ObservableType where Element == NFCTag {
 
     public var felicaTags: Observable<NFCFeliCaTag> {

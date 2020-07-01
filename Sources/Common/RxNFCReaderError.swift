@@ -16,6 +16,7 @@ struct RxNFCReaderError: LocalizedError {
     
 }
 
+@available(iOS 13.0, *)
 extension RxNFCReaderError {
 
    static let readerSessionRetrieveError = RxNFCReaderError(description: "Failed to retrieve the session")

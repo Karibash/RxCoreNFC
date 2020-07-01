@@ -9,5 +9,6 @@
 import CoreNFC
 import RxSwift
 
+@available(iOS 13.0, *)
 extension ObservableType where Element == NFCMiFareTag {
 }

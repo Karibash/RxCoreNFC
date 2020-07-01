@@ -10,6 +10,7 @@ import CoreNFC
 import RxSwift
 import RxCocoa
 
+@available(iOS 13.0, *)
 public final class RxNFCTagReaderSession {
     
     // MARK: - Private properties -
@@ -30,6 +31,7 @@ public final class RxNFCTagReaderSession {
 
 // MARK: - Extensions -
 
+@available(iOS 13.0, *)
 extension RxNFCTagReaderSession {
     
     // MARK: - Events -
@@ -70,6 +72,7 @@ extension RxNFCTagReaderSession {
     
 }
 
+@available(iOS 13.0, *)
 extension RxNFCTagReaderSession {
     
     // MARK: - Tags -
@@ -88,6 +91,7 @@ extension RxNFCTagReaderSession {
     
 }
 
+@available(iOS 13.0, *)
 extension RxNFCTagReaderSession {
     
     // MARK: - Triggers -
@@ -118,6 +122,7 @@ extension RxNFCTagReaderSession {
     
 }
 
+@available(iOS 13.0, *)
 extension RxNFCTagReaderSession {
     
     // MARK: - Connect -

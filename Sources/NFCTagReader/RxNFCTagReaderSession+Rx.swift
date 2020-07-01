@@ -9,6 +9,7 @@
 import CoreNFC
 import RxSwift
 
+@available(iOS 13.0, *)
 extension Observable where Element: RxNFCTagReaderSession {
     
     // MARK: - Tags -
@@ -19,6 +20,7 @@ extension Observable where Element: RxNFCTagReaderSession {
     
 }
 
+@available(iOS 13.0, *)
 extension Observable where Element: RxNFCTagReaderSession {
     
     // MARK: - Triggers -
@@ -37,6 +39,7 @@ extension Observable where Element: RxNFCTagReaderSession {
     
 }
 
+@available(iOS 13.0, *)
 extension Observable where Element: RxNFCTagReaderSession {
     
     // MARK: - Connect -

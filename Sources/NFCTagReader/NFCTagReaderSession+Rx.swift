@@ -9,6 +9,7 @@
 import CoreNFC
 import RxSwift
 
+@available(iOS 13.0, *)
 extension Reactive where Base: NFCTagReaderSession {
     static func open(pollingOption: NFCTagReaderSession.PollingOption) -> Observable<RxNFCTagReaderSession> {
         Observable
