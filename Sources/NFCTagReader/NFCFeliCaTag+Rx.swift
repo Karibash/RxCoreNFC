@@ -13,6 +13,9 @@ import RxSwift
 public typealias RxNFCFelicaPollingResponse = (manufactureParameter: Data, requestData: Data)
 
 @available(iOS 13.0, *)
+public typealias RxNFCFelicaRequestServiceResponse = ([Data])
+
+@available(iOS 13.0, *)
 extension ObservableType where Element == NFCFeliCaTag {
     
     // MARK: - Actions -
@@ -33,6 +36,21 @@ extension ObservableType where Element == NFCFeliCaTag {
                         observer(.error(error!))
                     } else {
                         observer(.success((manufactureParameter, requestData)))
+                    }
+                }
+                return Disposables.create()
+            }
+        }
+    }
+    
+    public func requestService(nodeCodeList: [Data]) -> Observable<RxNFCFelicaRequestServiceResponse> {
+        flatMap { tag in
+            Single.create { observer in
+                tag.requestService(nodeCodeList: nodeCodeList) { nodes, error in
+                    if error != nil {
+                        observer(.error(error!))
+                    } else {
+                        observer(.success(nodes))
                     }
                 }
                 return Disposables.create()
