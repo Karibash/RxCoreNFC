@@ -9,16 +9,20 @@
 import CoreNFC
 import RxSwift
 
+// MARK: - Aliases -
+
 @available(iOS 13.0, *)
 public typealias RxNFCFelicaPollingResponse = (manufactureParameter: Data, requestData: Data)
 
 @available(iOS 13.0, *)
 public typealias RxNFCFelicaRequestServiceResponse = ([Data])
 
+// MARK: - Extensions -
+
 @available(iOS 13.0, *)
 extension ObservableType where Element == NFCFeliCaTag {
     
-    // MARK: - Actions -
+    // MARK: - Commands -
     
     public func polling(
         systemCode: Data,
