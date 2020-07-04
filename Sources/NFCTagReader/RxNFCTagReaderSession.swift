@@ -15,15 +15,14 @@ public final class RxNFCTagReaderSession {
     
     // MARK: - Private properties -
     
-    private let delegate: Observable<RxNFCTagReaderSessionEvent>
+    private let proxy: RxNFCTagReaderSessionDelegateProxy
     
     private let session: NFCTagReaderSession
     
     // MARK: - Constructor -
     
     internal init(pollingOption: NFCTagReaderSession.PollingOption) {
-        let proxy = RxNFCTagReaderSessionDelegateProxy()
-        delegate = proxy.subject.asObservable()
+        proxy = RxNFCTagReaderSessionDelegateProxy()
         session = NFCTagReaderSession(pollingOption: pollingOption, delegate: proxy)!
     }
     
@@ -37,11 +36,11 @@ extension RxNFCTagReaderSession {
     // MARK: - Events -
     
     public var events: ControlEvent<RxNFCTagReaderSessionEvent> {
-        return ControlEvent(events: delegate)
+        return ControlEvent(events: proxy.subject)
     }
     
     public var didBecomeActiveEvents: ControlEvent<RxNFCDidBecomeActiveEvent> {
-        let events = delegate.flatMap { (event) -> Observable<RxNFCDidBecomeActiveEvent> in
+        let events = proxy.subject.flatMap { (event) -> Observable<RxNFCDidBecomeActiveEvent> in
             guard case let .didBecomeActive(event) = event else {
                 return Observable.empty()
             }
@@ -51,7 +50,7 @@ extension RxNFCTagReaderSession {
     }
     
     public var didErrorEvents: ControlEvent<RxNFCDidErrorEvent> {
-        let events = delegate.flatMap { (event) -> Observable<RxNFCDidErrorEvent> in
+        let events = proxy.subject.flatMap { (event) -> Observable<RxNFCDidErrorEvent> in
             guard case let .didError(event) = event else {
                 return Observable.empty()
             }
@@ -61,7 +60,7 @@ extension RxNFCTagReaderSession {
     }
     
     public var didDetectTagEvents: ControlEvent<RxNFCDidDetectEvent> {
-        let events = delegate.flatMap { (event) -> Observable<RxNFCDidDetectEvent> in
+        let events = proxy.subject.flatMap { (event) -> Observable<RxNFCDidDetectEvent> in
             guard case let .didDetect(event) = event else {
                 return Observable.empty()
             }
@@ -78,7 +77,7 @@ extension RxNFCTagReaderSession {
     // MARK: - Tags -
     
     public var tags: Observable<NFCTag> {
-        delegate.flatMap { (event) -> Observable<NFCTag> in
+        proxy.subject.flatMap { (event) -> Observable<NFCTag> in
             guard case let .didDetect(event) = event else {
                 return Observable.empty()
             }
