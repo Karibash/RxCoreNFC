@@ -12,10 +12,10 @@ import RxSwift
 // MARK: - Aliases -
 
 @available(iOS 13.0, *)
-public typealias RxNFCFelicaPollingResponse = (tag: NFCFeliCaTag, manufactureParameter: Data, requestData: Data)
+public typealias RxNFCFelicaPollingResponse = (manufactureParameter: Data, requestData: Data)
 
 @available(iOS 13.0, *)
-public typealias RxNFCFelicaRequestServiceResponse = (tag: NFCFeliCaTag, nodes: [Data])
+public typealias RxNFCFelicaRequestServiceResponse = ([Data])
 
 // MARK: - Extensions -
 
@@ -39,7 +39,7 @@ extension ObservableType where Element == NFCFeliCaTag {
                     if error != nil {
                         observer(.error(error!))
                     } else {
-                        observer(.success((tag, manufactureParameter, requestData)))
+                        observer(.success((manufactureParameter, requestData)))
                     }
                 }
                 return Disposables.create()
@@ -54,7 +54,7 @@ extension ObservableType where Element == NFCFeliCaTag {
                     if error != nil {
                         observer(.error(error!))
                     } else {
-                        observer(.success((tag, nodes)))
+                        observer(.success((nodes)))
                     }
                 }
                 return Disposables.create()
