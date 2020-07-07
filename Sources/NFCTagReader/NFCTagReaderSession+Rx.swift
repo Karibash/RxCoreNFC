@@ -13,11 +13,11 @@ import RxSwift
 extension Reactive where Base: NFCTagReaderSession {
     public static func open(pollingOption: NFCTagReaderSession.PollingOption) -> Observable<RxNFCTagReaderSession> {
         Observable
-              .create { observer in
-                  let session = RxNFCTagReaderSession(pollingOption: pollingOption)
-                  observer.on(.next(session))
-                  return Disposables.create()
-              }
-              .share(replay: 1, scope: .whileConnected)
+            .create { observer in
+                let session = RxNFCTagReaderSession(pollingOption: pollingOption)
+                observer.on(.next(session))
+                return Disposables.create()
+            }
+            .share(replay: 1, scope: .whileConnected)
     }
 }
