@@ -17,6 +17,9 @@ public typealias RxNFCFelicaPollingResponse = (manufactureParameter: Data, reque
 @available(iOS 13.0, *)
 public typealias RxNFCFelicaRequestServiceResponse = ([Data])
 
+@available(iOS 13.0, *)
+public typealias RxNFCFelicaReadWithoutEncryptionResponse = (status1: Int, status2: Int, dataList: [Data])
+
 // MARK: - Extensions -
 
 @available(iOS 13.0, *)
@@ -55,6 +58,24 @@ extension ObservableType where Element == NFCFeliCaTag {
                         observer(.error(error!))
                     } else {
                         observer(.success((nodes)))
+                    }
+                }
+                return Disposables.create()
+            }
+        }
+    }
+    
+    public func readWithoutEncryption(serviceCodeList: [Data], blockList: [Data]) -> Observable<RxNFCFelicaReadWithoutEncryptionResponse> {
+        flatMap { tag in
+            Single.create { observer in
+                tag.readWithoutEncryption(
+                    serviceCodeList: serviceCodeList,
+                    blockList: blockList
+                ) { status1, status2, dataList, error in
+                    if error != nil {
+                        observer(.error(error!))
+                    } else {
+                        observer(.success((status1, status2, dataList)))
                     }
                 }
                 return Disposables.create()
