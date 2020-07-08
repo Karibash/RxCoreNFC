@@ -21,7 +21,7 @@ public typealias RxNFCFelicaRequestServiceResponse = ([Data])
 public typealias RxNFCFelicaRequestServiceV2Response = (statusFlag1: Int, statusFlag2: Int, encryptionIdentifier: EncryptionId, nodeKeyVersionListAES: [Data], nodeKeyVersionListDES: [Data])
 
 @available(iOS 13.0, *)
-public typealias RxNFCFelicaReadWithoutEncryptionResponse = (status1: Int, status2: Int, dataList: [Data])
+public typealias RxNFCFelicaReadWithoutEncryptionResponse = (statusFlag1: Int, statusFlag2: Int, dataList: [Data])
 
 // MARK: - Extensions -
 
@@ -93,11 +93,11 @@ extension ObservableType where Element == NFCFeliCaTag {
                 tag.readWithoutEncryption(
                     serviceCodeList: serviceCodeList,
                     blockList: blockList
-                ) { status1, status2, dataList, error in
+                ) { statusFlag1, statusFlag2, dataList, error in
                     if error != nil {
                         observer(.error(error!))
                     } else {
-                        observer(.success((status1, status2, dataList)))
+                        observer(.success((statusFlag1, statusFlag2, dataList)))
                     }
                 }
                 return Disposables.create()
