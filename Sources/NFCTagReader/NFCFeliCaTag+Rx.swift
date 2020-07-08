@@ -56,7 +56,9 @@ extension ObservableType where Element == NFCFeliCaTag {
     public func requestService(nodeCodeList: [Data]) -> Observable<RxNFCFelicaRequestServiceResponse> {
         flatMap { tag in
             Single.create { observer in
-                tag.requestService(nodeCodeList: nodeCodeList) { nodes, error in
+                tag.requestService(
+                    nodeCodeList: nodeCodeList
+                ) { nodes, error in
                     if error != nil {
                         observer(.error(error!))
                     } else {
