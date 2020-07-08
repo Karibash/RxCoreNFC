@@ -18,6 +18,9 @@ public typealias RxNFCFelicaPollingResponse = (manufactureParameter: Data, reque
 public typealias RxNFCFelicaRequestServiceResponse = ([Data])
 
 @available(iOS 13.0, *)
+public typealias RxNFCFelicaRequestServiceV2Response = (statusFlag1: Int, statusFlag2: Int, encryptionIdentifier: EncryptionId, nodeKeyVersionListAES: [Data], nodeKeyVersionListDES: [Data])
+
+@available(iOS 13.0, *)
 public typealias RxNFCFelicaReadWithoutEncryptionResponse = (status1: Int, status2: Int, dataList: [Data])
 
 // MARK: - Extensions -
@@ -58,6 +61,23 @@ extension ObservableType where Element == NFCFeliCaTag {
                         observer(.error(error!))
                     } else {
                         observer(.success((nodes)))
+                    }
+                }
+                return Disposables.create()
+            }
+        }
+    }
+    
+    public func requestServiceV2(nodeCodeList: [Data]) -> Observable<RxNFCFelicaRequestServiceV2Response> {
+        flatMap { tag in
+            Single.create { observer in
+                tag.requestServiceV2(
+                    nodeCodeList: nodeCodeList
+                ) { statusFlag1, statusFlag2, encryptionIdentifier, nodeKeyVersionListAES, nodeKeyVersionListDES, error  in
+                    if error != nil {
+                        observer(.error(error!))
+                    } else {
+                        observer(.success((statusFlag1, statusFlag2, encryptionIdentifier, nodeKeyVersionListAES, nodeKeyVersionListDES)))
                     }
                 }
                 return Disposables.create()
