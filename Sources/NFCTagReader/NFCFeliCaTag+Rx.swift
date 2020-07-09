@@ -15,9 +15,6 @@ import RxSwift
 public typealias RxNFCFelicaPollingResponse = (manufactureParameter: Data, requestData: Data)
 
 @available(iOS 13.0, *)
-public typealias RxNFCFelicaRequestServiceResponse = ([Data])
-
-@available(iOS 13.0, *)
 public typealias RxNFCFelicaRequestServiceV2Response = (statusFlag1: Int, statusFlag2: Int, encryptionIdentifier: EncryptionId, nodeKeyVersionListAES: [Data], nodeKeyVersionListDES: [Data])
 
 @available(iOS 13.0, *)
@@ -53,7 +50,7 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
-    public func requestService(nodeCodeList: [Data]) -> Observable<RxNFCFelicaRequestServiceResponse> {
+    public func requestService(nodeCodeList: [Data]) -> Observable<[Data]> {
         flatMap { tag in
             Single.create { observer in
                 tag.requestService(
