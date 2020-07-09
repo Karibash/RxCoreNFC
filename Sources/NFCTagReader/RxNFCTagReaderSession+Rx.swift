@@ -23,7 +23,7 @@ extension Observable where Element: RxNFCTagReaderSession {
 @available(iOS 13.0, *)
 extension Observable where Element: RxNFCTagReaderSession {
     
-    // MARK: - Triggers -
+    // MARK: - Actions -
     
     public func begin() -> Observable<RxNFCTagReaderSession> {
         flatMap { $0.begin() }
