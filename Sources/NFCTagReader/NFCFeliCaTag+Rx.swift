@@ -105,4 +105,19 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    public func requestResponse() -> Observable<Int> {
+        flatMap { tag in
+            Single.create { observer in
+                 tag.requestResponse { mode, error in
+                     if error != nil {
+                         observer(.error(error!))
+                     } else {
+                         observer(.success(mode))
+                     }
+                 }
+                 return Disposables.create()
+             }
+        }
+    }
+    
 }
