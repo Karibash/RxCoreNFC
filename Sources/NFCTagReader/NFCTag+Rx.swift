@@ -12,6 +12,8 @@ import RxSwift
 @available(iOS 13.0, *)
 extension ObservableType where Element == NFCTag {
 
+    // MARK: - Filters -
+    
     public func felicaTags() -> Observable<NFCFeliCaTag> {
         flatMap { (tag) -> Observable<NFCFeliCaTag> in
             guard case let .feliCa(tag) = tag else {
