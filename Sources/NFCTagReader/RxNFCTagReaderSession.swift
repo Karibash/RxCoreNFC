@@ -93,9 +93,9 @@ extension RxNFCTagReaderSession {
 @available(iOS 13.0, *)
 extension RxNFCTagReaderSession {
     
-    // MARK: - Triggers -
+    // MARK: - Actions -
     
-    public var begin: Single<RxNFCTagReaderSession> {
+    public func begin() -> Single<RxNFCTagReaderSession> {
         Single.create { observer in
             self.session.begin()
             observer(.success(self))
@@ -103,7 +103,7 @@ extension RxNFCTagReaderSession {
         }
     }
     
-    public var invalidate: Single<RxNFCTagReaderSession> {
+    public func invalidate() -> Single<RxNFCTagReaderSession> {
         Single.create { observer in
             self.session.invalidate()
             observer(.success(self))
@@ -111,7 +111,7 @@ extension RxNFCTagReaderSession {
         }
     }
     
-    public var restartPolling: Single<RxNFCTagReaderSession> {
+    public func restartPolling() -> Single<RxNFCTagReaderSession> {
         Single.create { observer in
             self.session.restartPolling()
             observer(.success(self))

@@ -14,7 +14,7 @@ extension Observable where Element: RxNFCTagReaderSession {
     
     // MARK: - Tags -
     
-    public var tags: Observable<NFCTag> {
+    public func tags() ->Observable<NFCTag> {
         flatMap { $0.tags }
     }
     
@@ -25,16 +25,16 @@ extension Observable where Element: RxNFCTagReaderSession {
     
     // MARK: - Triggers -
     
-    public var begin: Observable<RxNFCTagReaderSession> {
-        flatMap { $0.begin }
+    public func begin() -> Observable<RxNFCTagReaderSession> {
+        flatMap { $0.begin() }
     }
     
-    public var invalidate: Observable<RxNFCTagReaderSession> {
-        flatMap { $0.invalidate }
+    public func invalidate() -> Observable<RxNFCTagReaderSession> {
+        flatMap { $0.invalidate() }
     }
     
-    public var restartPolling: Observable<RxNFCTagReaderSession> {
-        flatMap { $0.restartPolling }
+    public func restartPolling() -> Observable<RxNFCTagReaderSession> {
+        flatMap { $0.restartPolling() }
     }
     
 }
