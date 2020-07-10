@@ -3,8 +3,9 @@
 [![Swift](https://img.shields.io/badge/Swift-5.x-orange?style=flat&logo=swift)](https://developer.apple.com/swift/)
 [![Release](https://img.shields.io/github/v/release/Karibash/RxCoreNFC?style=flat&include_prereleases&logo=github)](https://github.com/Karibash/RxCoreNFC/releases)
 [![Build](https://img.shields.io/github/workflow/status/Karibash/RxCoreNFC/CI?style=flat&logo=github%20actions)](https://github.com/Karibash/RxCoreNFC/actions)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/RxCoreNFC?style=flat&logo=cocoapods)](http://cocoapods.org/pods/RxCoreNFC)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/cocoapods/v/RxCoreNFC?style=flat&logo=cocoapods)](https://github.com/Karibash/RxCoreNFC#cocoapods)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-brightgreen?style=flat)](https://github.com/Karibash/RxCoreNFC#carthage)
+[![SwiftPM](https://img.shields.io/badge/SwiftPM-compatible-orange?style=flat)](https://github.com/Karibash/RxCoreNFC#swift-package-manager)
 [![Platform](https://img.shields.io/cocoapods/p/RxCoreNFC?style=flat&logo=apple)](http://cocoapods.org/pods/RxCoreNFC)
 [![License](https://img.shields.io/github/license/Karibash/RxCoreNFC?style=flat)](https://github.com/Karibash/RxCoreNFC/blob/master/LICENSE)
 
@@ -51,6 +52,14 @@ github "Karibash/RxCoreNFC"
 
 ```
 $ carthage update
+```
+
+#### Swift Package Manager
+
+File > Swift Package > Add Package Dependency... > Enter package repository URL
+
+```
+https://github.com/Karibash/RxCoreNFC
 ```
 
 ## Contribute
