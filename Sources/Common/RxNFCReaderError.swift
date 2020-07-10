@@ -6,6 +6,8 @@
 //  Copyright © 2020 Karibash. All rights reserved.
 //
 
+import Foundation
+
 struct RxNFCReaderError: LocalizedError {
 
    private var description: String
