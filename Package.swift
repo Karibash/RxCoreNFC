@@ -13,8 +13,19 @@ let package = Package(
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0")
     ],
     targets: [
-        .target(name: "RxCoreNFC", dependencies: ["RxSwift", "RxCocoa"], path: "Sources"),
-        .testTarget(name: "RxCoreNFCTests", dependencies: ["RxCoreNFC"]),
+        .target(
+            name: "RxCoreNFC",
+            dependencies: [
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "RxCocoa", package: "RxSwift"),
+            ],
+            path: "Sources"),
+        .testTarget(
+            name: "RxCoreNFCTests",
+            dependencies: [
+                .target(name: "RxCoreNFC"),
+            ]
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )
