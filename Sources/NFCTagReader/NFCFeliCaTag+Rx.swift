@@ -135,4 +135,19 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    public func requestSystemCode() -> Observable<[Data]> {
+        flatMap { tag in
+            Single.create { observer in
+                tag.requestSystemCode { systemCodeList, error in
+                    if error != nil {
+                        observer(.error(error!))
+                    } else {
+                        observer(.success(systemCodeList))
+                    }
+                }
+                 return Disposables.create()
+             }
+        }
+    }
+    
 }
