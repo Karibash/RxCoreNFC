@@ -21,6 +21,9 @@ public typealias RxNFCFelicaRequestServiceV2Response = (statusFlag1: Int, status
 public typealias RxNFCFelicaReadWithoutEncryptionResponse = (statusFlag1: Int, statusFlag2: Int, dataList: [Data])
 
 @available(iOS 13.0, *)
+public typealias RxNFCFelicaWriteWithoutEncryptionResponse = (statusFlag1: Int, statusFlag2: Int)
+
+@available(iOS 13.0, *)
 public typealias RxNFCFelicaRequestSpecificationVersionResponse = (statusFlag1: Int, statusFlag2: Int, basicVersion: Data, optionVersion: Data)
 
 @available(iOS 13.0, *)
@@ -105,6 +108,29 @@ extension ObservableType where Element == NFCFeliCaTag {
                 }
                 return Disposables.create()
             }
+        }
+    }
+    
+    public func writeWithoutEncryption(
+        serviceCodeList: [Data],
+        blockList: [Data],
+        blockData: [Data]
+    ) -> Observable<RxNFCFelicaWriteWithoutEncryptionResponse> {
+        flatMap { tag in
+            Single.create { observer in
+                 tag.writeWithoutEncryption(
+                    serviceCodeList: serviceCodeList,
+                    blockList: blockList,
+                    blockData: blockData
+                 ) { statusFlag1, statusFlag2, error in
+                     if error != nil {
+                         observer(.error(error!))
+                     } else {
+                         observer(.success((statusFlag1, statusFlag2)))
+                     }
+                 }
+                 return Disposables.create()
+             }
         }
     }
     
