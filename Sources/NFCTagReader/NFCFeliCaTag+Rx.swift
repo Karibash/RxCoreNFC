@@ -23,6 +23,9 @@ public typealias RxNFCFelicaReadWithoutEncryptionResponse = (statusFlag1: Int, s
 @available(iOS 13.0, *)
 public typealias RxNFCFelicaRequestSpecificationVersionResponse = (statusFlag1: Int, statusFlag2: Int, basicVersion: Data, optionVersion: Data)
 
+@available(iOS 13.0, *)
+public typealias RxNFCFelicaResetModeResponse = (statusFlag1: Int, statusFlag2: Int)
+
 // MARK: - Extensions -
 
 @available(iOS 13.0, *)
@@ -143,6 +146,21 @@ extension ObservableType where Element == NFCFeliCaTag {
                         observer(.error(error!))
                     } else {
                         observer(.success(systemCodeList))
+                    }
+                }
+                 return Disposables.create()
+             }
+        }
+    }
+    
+    public func resetMode() -> Observable<RxNFCFelicaResetModeResponse> {
+        flatMap { tag in
+            Single.create { observer in
+                tag.resetMode { statusFlag1, statusFlag2, error in
+                    if error != nil {
+                        observer(.error(error!))
+                    } else {
+                        observer(.success((statusFlag1, statusFlag2)))
                     }
                 }
                  return Disposables.create()
