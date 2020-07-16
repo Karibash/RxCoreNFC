@@ -36,6 +36,13 @@ extension ObservableType where Element == NFCFeliCaTag {
     
     // MARK: - Commands -
     
+    /// Sends the Polling command as defined by FeliCa card specification to the tag.
+    /// - Note: Node key version list is return as NSArray of NSData objects, and each data object is stored in Little Endian format per FeliCa specification.
+    /// - Parameters:
+    ///   - systemCode: System code for the the FeliCa tag to be requested.
+    ///   - requestCode: Request code for the data to be requested.
+    ///   - timeSlot: The number of FeliCa tags to request.
+    /// - Returns: Returns data according to manufacturing parameters and request code.
     public func polling(
         systemCode: Data,
         requestCode: PollingRequestCode,
@@ -59,6 +66,11 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Request Service command, as defined by the FeliCa card specification, to the tag.
+    /// - Note: The order of the key versions in the node key version list matches the node code list.
+    /// - Important: It is necessary to enumerate and specify area codes or service codes by little endian in the node code list parameter.
+    /// - Parameter nodeCodeList: Node code list for the service to be requested.
+    /// - Returns: Returns a list of node key versions.
     public func requestService(nodeCodeList: [Data]) -> Observable<[Data]> {
         flatMap { tag in
             Single.create { observer in
@@ -76,6 +88,11 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Request Service V2 command, as defined by the FeliCa card specification, to the tag.
+    /// - Note: The order of the key versions in the node key version list matches the node code list.
+    /// - Important: It is necessary to enumerate and specify area codes or service codes by little endian in the node code list parameter.
+    /// - Parameter nodeCodeList: Node code list for the service to be requested.
+    /// - Returns: Returns a list of cryptographic identifiers and node key versions.
     public func requestServiceV2(nodeCodeList: [Data]) -> Observable<RxNFCFelicaRequestServiceV2Response> {
         flatMap { tag in
             Single.create { observer in
@@ -93,6 +110,13 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Read Without Encryption command, as defined by the FeliCa card specification, to the tag.
+    /// - Note: The maximum number of blocks that can be read at the same time is different for each product.
+    /// - Important: Do not specify a service code in the service code list that is not referenced from the block list.
+    /// - Parameters:
+    ///   - serviceCodeList: Service code list for the data to be read.
+    ///   - blockList: Block list for the data to be read.
+    /// - Returns: Returns the data read.
     public func readWithoutEncryption(serviceCodeList: [Data], blockList: [Data]) -> Observable<RxNFCFelicaReadWithoutEncryptionResponse> {
         flatMap { tag in
             Single.create { observer in
@@ -111,6 +135,14 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Write Without Encryption command, as defined by the FeliCa card specification, to the tag.
+    /// - Note: The maximum number of blocks that can be written at the same time is different for each product.
+    /// - Important: Do not specify a service code in the service code list that is not referenced from the block list.
+    /// - Parameters:
+    ///   - serviceCodeList: Service code list for the data to be written.
+    ///   - blockList: Block list for the data to be written.
+    ///   - blockData: Block data for the data to be written.
+    /// - Returns: Returns the result of the operation.
     public func writeWithoutEncryption(
         serviceCodeList: [Data],
         blockList: [Data],
@@ -134,6 +166,8 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Request Response command, as defined by the FeliCa card specification, to the tag.
+    /// - Returns: Returns the current mode of the tag.
     public func requestResponse() -> Observable<Int> {
         flatMap { tag in
             Single.create { observer in
@@ -149,6 +183,8 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Request Specification Version command, as defined by the FeliCa card specification, to the tag.
+    /// - Returns: Returns the OS version of the tag.
     public func requestSpecificationVersion() -> Observable<RxNFCFelicaRequestSpecificationVersionResponse> {
         flatMap { tag in
             Single.create { observer in
@@ -164,6 +200,8 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Request System Code command, as defined by the FeliCa card specification, to the tag.
+    /// - Returns: Returns the system code registered to the card.
     public func requestSystemCode() -> Observable<[Data]> {
         flatMap { tag in
             Single.create { observer in
@@ -179,6 +217,8 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the Reset Mode command, as defined by the FeliCa card specification, to the tag.
+    /// - Returns: Returns the result of the operation.
     public func resetMode() -> Observable<RxNFCFelicaResetModeResponse> {
         flatMap { tag in
             Single.create { observer in
