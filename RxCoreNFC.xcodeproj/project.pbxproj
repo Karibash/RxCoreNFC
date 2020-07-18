@@ -119,7 +119,11 @@
 			children = (
 				E6A2A61D24A632F800282503 /* Common */,
 				E6A2A60424A21B0E00282503 /* NFCTagReader */,
+				E6A6ADD624C303080069F67B /* NFCTag */,
 				E6A2A7F024C1611500282503 /* NFCFeliCaTag */,
+				E6A6ADD324C302D30069F67B /* NFCISO7816Tag */,
+				E6A6ADD424C302E80069F67B /* NFCISO15693Tag */,
+				E6A6ADD524C302F80069F67B /* NFCMiFareTag */,
 				E615918B249CA53B00E07113 /* Supporting Files */,
 				E6A2A5EF249CA89600282503 /* RxCoreNFC.h */,
 			);
@@ -154,10 +158,6 @@
 				E6A2A60C24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift */,
 				E6A2A60B24A377A300282503 /* RxNFCTagReaderSessionEvent.swift */,
 				E6A2A61124A42BF400282503 /* NFCTagReaderSession+Rx.swift */,
-				E6A2A61E24A7878000282503 /* NFCTag+Rx.swift */,
-				E6A2A61524A6275500282503 /* NFCISO7816Tag+Rx.swift */,
-				E6A2A61724A62CDC00282503 /* NFCISO15693Tag+Rx.swift */,
-				E6A2A61B24A631B400282503 /* NFCMiFareTag+Rx.swift */,
 			);
 			path = NFCTagReader;
 			sourceTree = "<group>";
@@ -194,6 +194,38 @@
 				E6A6ACC724C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		E6A6ADD324C302D30069F67B /* NFCISO7816Tag */ = {
+			isa = PBXGroup;
+			children = (
+				E6A2A61524A6275500282503 /* NFCISO7816Tag+Rx.swift */,
+			);
+			path = NFCISO7816Tag;
+			sourceTree = "<group>";
+		};
+		E6A6ADD424C302E80069F67B /* NFCISO15693Tag */ = {
+			isa = PBXGroup;
+			children = (
+				E6A2A61724A62CDC00282503 /* NFCISO15693Tag+Rx.swift */,
+			);
+			path = NFCISO15693Tag;
+			sourceTree = "<group>";
+		};
+		E6A6ADD524C302F80069F67B /* NFCMiFareTag */ = {
+			isa = PBXGroup;
+			children = (
+				E6A2A61B24A631B400282503 /* NFCMiFareTag+Rx.swift */,
+			);
+			path = NFCMiFareTag;
+			sourceTree = "<group>";
+		};
+		E6A6ADD624C303080069F67B /* NFCTag */ = {
+			isa = PBXGroup;
+			children = (
+				E6A2A61E24A7878000282503 /* NFCTag+Rx.swift */,
+			);
+			path = NFCTag;
 			sourceTree = "<group>";
 		};
 		E6BF06D8249C9D82007E84D3 = {
