@@ -12,23 +12,23 @@
 [![Github](https://img.shields.io/github/followers/Karibash?label=Follow&logo=github&style=social)](https://github.com/Karibash?tab=following)
 [![Twitter](https://img.shields.io/twitter/follow/Karibash?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=Karibash)
 
-## Features
+## 🔧 Features
 
 - [ ] NFCTagReaderSession
-  - [ ] NFCFeliCaTag
+  - [x] NFCFeliCaTag
   - [ ] NFCMiFareTag
   - [ ] NFCISO15693Tag
   - [ ] NFCISO7816Tag
 - [ ] NFCNDEFReaderSession
 - [ ] NFCVASReaderSession
 
-## Requirements
+## ✔️ Requirements
 
 - iOS 11.0+
 - Xcode 9.0+
 - Swift 5.0+
 
-## Installation
+## 🚀 Installation
 
 #### CocoaPods
 
@@ -62,12 +62,14 @@ File > Swift Package > Add Package Dependency... > Enter package repository URL
 https://github.com/Karibash/RxCoreNFC
 ```
 
-## Contribute
+## 🤝 Contributing
 
-We would love you for the contribution to **RxCoreNFC**, check the [``LICENSE``](https://github.com/Karibash/RxCoreNFC/blob/master/LICENSE) file for more info.
+Contributions, issues and feature requests are welcome.
 
-## Meta
+Feel free to check [issues page](https://github.com/Karibash/RxCoreNFC/issues) if you want to contribute.
 
-Karibash – [@Karibash](https://twitter.com/karibash)
+## 📝 License
 
-Distributed under the MIT license. See [``LICENSE``](https://github.com/Karibash/RxCoreNFC/blob/master/LICENSE) for more information.
+Copyright © 2019 [@Karibash](https://twitter.com/karibash).
+
+This project is [```MIT```](https://github.com/Karibash/RxCoreNFC/blob/master/LICENSE) licensed.
