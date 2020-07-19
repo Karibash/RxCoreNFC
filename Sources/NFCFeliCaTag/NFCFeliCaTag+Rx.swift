@@ -239,4 +239,24 @@ extension ObservableType where Element == NFCFeliCaTag {
         }
     }
     
+    /// Sends the FeliCa command packet data to the tag.
+    /// - Parameter commandPacket: Command packet for the sent to the FeliCa tag.
+    /// - Returns: Returns the result of the operation.
+    public func sendFeliCaCommand(commandPacket: Data) -> Observable<RxNFCFeliCaSendFeliCaCommandResult> {
+        flatMap { tag in
+            Single.create { observer in
+                tag.sendFeliCaCommand(commandPacket: commandPacket) { data, error in
+                    if error != nil {
+                        observer(.error(error!))
+                    } else {
+                        observer(.success(RxNFCFeliCaSendFeliCaCommandResult(
+                            data: data
+                        )))
+                    }
+                }
+                 return Disposables.create()
+             }
+        }
+    }
+    
 }
