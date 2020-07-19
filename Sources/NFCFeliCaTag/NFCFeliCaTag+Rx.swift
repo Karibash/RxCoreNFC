@@ -107,7 +107,7 @@ extension ObservableType where Element == NFCFeliCaTag {
     ///   - serviceCodeList: Service code list for the data to be read.
     ///   - blockList: Block list for the data to be read.
     /// - Returns: Returns the data read.
-    public func readWithoutEncryption(serviceCodeList: [Data], blockList: [Data]) -> Observable<RxNFCFelicaReadWithoutEncryptionResult> {
+    public func readWithoutEncryption(serviceCodeList: [Data], blockList: [Data]) -> Observable<RxNFCFeliCaReadWithoutEncryptionResult> {
         flatMap { tag in
             Single.create { observer in
                 tag.readWithoutEncryption(
@@ -117,7 +117,7 @@ extension ObservableType where Element == NFCFeliCaTag {
                     if error != nil {
                         observer(.error(error!))
                     } else {
-                        observer(.success(RxNFCFelicaReadWithoutEncryptionResult(
+                        observer(.success(RxNFCFeliCaReadWithoutEncryptionResult(
                             statusFlag: RxNFCFeliCaStatusFlag(statusFlag1: statusFlag1, statusFlag2: statusFlag2),
                             dataList: dataList
                         )))
@@ -140,7 +140,7 @@ extension ObservableType where Element == NFCFeliCaTag {
         serviceCodeList: [Data],
         blockList: [Data],
         blockData: [Data]
-    ) -> Observable<RxNFCFelicaWriteWithoutEncryptionResult> {
+    ) -> Observable<RxNFCFeliCaWriteWithoutEncryptionResult> {
         flatMap { tag in
             Single.create { observer in
                  tag.writeWithoutEncryption(
@@ -151,7 +151,7 @@ extension ObservableType where Element == NFCFeliCaTag {
                      if error != nil {
                          observer(.error(error!))
                      } else {
-                         observer(.success(RxNFCFelicaWriteWithoutEncryptionResult(
+                         observer(.success(RxNFCFeliCaWriteWithoutEncryptionResult(
                             statusFlag: RxNFCFeliCaStatusFlag(statusFlag1: statusFlag1, statusFlag2: statusFlag2)
                          )))
                      }
@@ -182,14 +182,14 @@ extension ObservableType where Element == NFCFeliCaTag {
     
     /// Sends the Request Specification Version command, as defined by the FeliCa card specification, to the tag.
     /// - Returns: Returns the OS version of the tag.
-    public func requestSpecificationVersion() -> Observable<RxNFCFelicaRequestSpecificationVersionResult> {
+    public func requestSpecificationVersion() -> Observable<RxNFCFeliCaRequestSpecificationVersionResult> {
         flatMap { tag in
             Single.create { observer in
                  tag.requestSpecificationVersion { statusFlag1, statusFlag2, basicVersion, optionVersion, error in
                      if error != nil {
                          observer(.error(error!))
                      } else {
-                         observer(.success(RxNFCFelicaRequestSpecificationVersionResult(
+                         observer(.success(RxNFCFeliCaRequestSpecificationVersionResult(
                             statusFlag: RxNFCFeliCaStatusFlag(statusFlag1: statusFlag1, statusFlag2: statusFlag2),
                             basicVersion: basicVersion,
                             optionVersion: optionVersion

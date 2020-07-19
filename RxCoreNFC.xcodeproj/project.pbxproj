@@ -26,10 +26,10 @@
 		E6A2A7F424C1624500282503 /* RxNFCFeliCaPollingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7F324C1624500282503 /* RxNFCFeliCaPollingResult.swift */; };
 		E6A2A7F624C1639800282503 /* RxNFCFeliCaRequestServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7F524C1639800282503 /* RxNFCFeliCaRequestServiceResult.swift */; };
 		E6A2A7F824C1646000282503 /* RxNFCFeliCaRequestServiceV2Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7F724C1646000282503 /* RxNFCFeliCaRequestServiceV2Result.swift */; };
-		E6A2A7FA24C1656E00282503 /* RxNFCFelicaReadWithoutEncryptionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7F924C1656E00282503 /* RxNFCFelicaReadWithoutEncryptionResult.swift */; };
-		E6A2A7FC24C165FC00282503 /* RxNFCFelicaWriteWithoutEncryptionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7FB24C165FC00282503 /* RxNFCFelicaWriteWithoutEncryptionResult.swift */; };
+		E6A2A7FA24C1656E00282503 /* RxNFCFeliCaReadWithoutEncryptionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7F924C1656E00282503 /* RxNFCFeliCaReadWithoutEncryptionResult.swift */; };
+		E6A2A7FC24C165FC00282503 /* RxNFCFeliCaWriteWithoutEncryptionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7FB24C165FC00282503 /* RxNFCFeliCaWriteWithoutEncryptionResult.swift */; };
 		E6A2A7FE24C166A400282503 /* RxNFCFeliCaRequestResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2A7FD24C166A400282503 /* RxNFCFeliCaRequestResponseResult.swift */; };
-		E6A6ACC424C167DC0069F67B /* RxNFCFelicaRequestSpecificationVersionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ACC324C167DC0069F67B /* RxNFCFelicaRequestSpecificationVersionResult.swift */; };
+		E6A6ACC424C167DC0069F67B /* RxNFCFeliCaRequestSpecificationVersionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ACC324C167DC0069F67B /* RxNFCFeliCaRequestSpecificationVersionResult.swift */; };
 		E6A6ACC624C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ACC524C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift */; };
 		E6A6ACC824C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ACC724C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift */; };
 		E6A6ADD824C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ADD724C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift */; };
@@ -68,10 +68,10 @@
 		E6A2A7F324C1624500282503 /* RxNFCFeliCaPollingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaPollingResult.swift; sourceTree = "<group>"; };
 		E6A2A7F524C1639800282503 /* RxNFCFeliCaRequestServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaRequestServiceResult.swift; sourceTree = "<group>"; };
 		E6A2A7F724C1646000282503 /* RxNFCFeliCaRequestServiceV2Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaRequestServiceV2Result.swift; sourceTree = "<group>"; };
-		E6A2A7F924C1656E00282503 /* RxNFCFelicaReadWithoutEncryptionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFelicaReadWithoutEncryptionResult.swift; sourceTree = "<group>"; };
-		E6A2A7FB24C165FC00282503 /* RxNFCFelicaWriteWithoutEncryptionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFelicaWriteWithoutEncryptionResult.swift; sourceTree = "<group>"; };
+		E6A2A7F924C1656E00282503 /* RxNFCFeliCaReadWithoutEncryptionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaReadWithoutEncryptionResult.swift; sourceTree = "<group>"; };
+		E6A2A7FB24C165FC00282503 /* RxNFCFeliCaWriteWithoutEncryptionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaWriteWithoutEncryptionResult.swift; sourceTree = "<group>"; };
 		E6A2A7FD24C166A400282503 /* RxNFCFeliCaRequestResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaRequestResponseResult.swift; sourceTree = "<group>"; };
-		E6A6ACC324C167DC0069F67B /* RxNFCFelicaRequestSpecificationVersionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFelicaRequestSpecificationVersionResult.swift; sourceTree = "<group>"; };
+		E6A6ACC324C167DC0069F67B /* RxNFCFeliCaRequestSpecificationVersionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaRequestSpecificationVersionResult.swift; sourceTree = "<group>"; };
 		E6A6ACC524C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaRequestSystemCodeResult.swift; sourceTree = "<group>"; };
 		E6A6ACC724C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaResetModeResult.swift; sourceTree = "<group>"; };
 		E6A6ADD724C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaSendFeliCaCommandResult.swift; sourceTree = "<group>"; };
@@ -188,10 +188,10 @@
 				E6A2A7F324C1624500282503 /* RxNFCFeliCaPollingResult.swift */,
 				E6A2A7F524C1639800282503 /* RxNFCFeliCaRequestServiceResult.swift */,
 				E6A2A7F724C1646000282503 /* RxNFCFeliCaRequestServiceV2Result.swift */,
-				E6A2A7F924C1656E00282503 /* RxNFCFelicaReadWithoutEncryptionResult.swift */,
-				E6A2A7FB24C165FC00282503 /* RxNFCFelicaWriteWithoutEncryptionResult.swift */,
+				E6A2A7F924C1656E00282503 /* RxNFCFeliCaReadWithoutEncryptionResult.swift */,
+				E6A2A7FB24C165FC00282503 /* RxNFCFeliCaWriteWithoutEncryptionResult.swift */,
 				E6A2A7FD24C166A400282503 /* RxNFCFeliCaRequestResponseResult.swift */,
-				E6A6ACC324C167DC0069F67B /* RxNFCFelicaRequestSpecificationVersionResult.swift */,
+				E6A6ACC324C167DC0069F67B /* RxNFCFeliCaRequestSpecificationVersionResult.swift */,
 				E6A6ACC524C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift */,
 				E6A6ACC724C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift */,
 				E6A6ADD724C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift */,
@@ -367,11 +367,11 @@
 				E6A6ACC624C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift in Sources */,
 				E6A2A7F624C1639800282503 /* RxNFCFeliCaRequestServiceResult.swift in Sources */,
 				E6A2A61024A377A300282503 /* RxNFCTagReaderSession.swift in Sources */,
-				E6A2A7FC24C165FC00282503 /* RxNFCFelicaWriteWithoutEncryptionResult.swift in Sources */,
+				E6A2A7FC24C165FC00282503 /* RxNFCFeliCaWriteWithoutEncryptionResult.swift in Sources */,
 				E6A2A7FE24C166A400282503 /* RxNFCFeliCaRequestResponseResult.swift in Sources */,
-				E6A2A7FA24C1656E00282503 /* RxNFCFelicaReadWithoutEncryptionResult.swift in Sources */,
+				E6A2A7FA24C1656E00282503 /* RxNFCFeliCaReadWithoutEncryptionResult.swift in Sources */,
 				E6A2A60F24A377A300282503 /* RxNFCTagReaderSessionDelegateProxy.swift in Sources */,
-				E6A6ACC424C167DC0069F67B /* RxNFCFelicaRequestSpecificationVersionResult.swift in Sources */,
+				E6A6ACC424C167DC0069F67B /* RxNFCFeliCaRequestSpecificationVersionResult.swift in Sources */,
 				E6A2A61224A42BF400282503 /* NFCTagReaderSession+Rx.swift in Sources */,
 				E6A2A7F424C1624500282503 /* RxNFCFeliCaPollingResult.swift in Sources */,
 				E6A2A61C24A631B400282503 /* NFCMiFareTag+Rx.swift in Sources */,

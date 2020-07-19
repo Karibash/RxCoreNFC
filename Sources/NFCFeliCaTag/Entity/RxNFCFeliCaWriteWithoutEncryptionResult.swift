@@ -1,5 +1,5 @@
 //
-//  RxNFCFelicaWriteWithoutEncryptionResult.swift
+//  RxNFCFeliCaWriteWithoutEncryptionResult.swift
 //  RxCoreNFC
 //
 //  Created by Karibash on 2020/07/17.
@@ -9,6 +9,6 @@
 import Foundation
 
 @available(iOS 13.0, *)
-public struct RxNFCFelicaWriteWithoutEncryptionResult {
+public struct RxNFCFeliCaWriteWithoutEncryptionResult {
     let statusFlag: RxNFCFeliCaStatusFlag
 }

@@ -1,5 +1,5 @@
 //
-//  RxNFCFelicaRequestSpecificationVersionResult.swift
+//  RxNFCFeliCaReadWithoutEncryptionResult.swift
 //  RxCoreNFC
 //
 //  Created by Karibash on 2020/07/17.
@@ -9,8 +9,7 @@
 import Foundation
 
 @available(iOS 13.0, *)
-public struct RxNFCFelicaRequestSpecificationVersionResult {
+public struct RxNFCFeliCaReadWithoutEncryptionResult {
     let statusFlag: RxNFCFeliCaStatusFlag
-    let basicVersion: Data
-    let optionVersion: Data
+    let dataList: [Data]
 }
