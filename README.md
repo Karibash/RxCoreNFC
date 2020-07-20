@@ -28,9 +28,37 @@
 - Xcode 9.0+
 - Swift 5.0+
 
+## 👏 Getting Started
+
+The basic usage is as follows:
+
+```swift
+let sessions = NFCTagReaderSession.rx.open(pollingOption: [.iso18092])
+let tags = sessions.begin().tags().felicaTags()
+let connectedTags = Observable.combineLatest(tags, sessions)
+    .flatMap { tag, session in session.connect(tag) }
+    .share()
+
+let invalidates = connectedTags
+    .requestService(nodeCodeList: SERVICE_CODE_LIST)
+    .withLatestFrom(connectedTags)
+    .readWithoutEncryption(serviceCodeList: SERVICE_CODE_LIST, blockList: BLOCK_LIST })
+    .do(onNext: { result in
+        // Do something
+    })
+    .withLatestFrom(sessions)
+    .invalidate()
+    .first()
+
+button.rx.tap
+    .flatMapFirst { invalidates }
+    .subscribe()
+    .disposed(by: disposeBag)
+```
+
 ## 🚀 Installation
 
-#### CocoaPods
+### CocoaPods
 
 You can use [CocoaPods](http://cocoapods.org/) to install `RxCoreNFC` by adding it to your `Podfile`:
 
@@ -42,7 +70,7 @@ pod 'RxCoreNFC'
 $ pod install
 ```
 
-#### Carthage
+### Carthage
 
 Create a `Cartfile` that lists the framework and run `carthage update`. Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos) to add `$(SRCROOT)/Carthage/Build/iOS/RxCoreNFC.framework` to an iOS project.
 
@@ -54,7 +82,7 @@ github "Karibash/RxCoreNFC"
 $ carthage update
 ```
 
-#### Swift Package Manager
+### Swift Package Manager
 
 File > Swift Package > Add Package Dependency... > Enter package repository URL
 
