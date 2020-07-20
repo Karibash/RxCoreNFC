@@ -14,7 +14,7 @@ extension ObservableType where Element == NFCTag {
 
     // MARK: - Filters -
     
-    public func felicaTags() -> Observable<NFCFeliCaTag> {
+    public func feliCaTags() -> Observable<NFCFeliCaTag> {
         flatMap { (tag) -> Observable<NFCFeliCaTag> in
             guard case let .feliCa(tag) = tag else {
                 return Observable.empty()
