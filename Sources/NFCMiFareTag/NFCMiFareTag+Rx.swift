@@ -35,4 +35,26 @@ extension ObservableType where Element == NFCMiFareTag {
         }
     }
     
+    /// Sends an ISO 7816 command APDU to the tag and receives a response APDU.
+    /// - Parameter apdu: An ISO 7816-4 command APDU object.
+    /// - Returns: An APDU response and command processing status byte.
+    public func sendMiFareISO7816Command(apdu: NFCISO7816APDU) -> Observable<RxNFCMiFareSendMiFareISO7816CommandResult> {
+        flatMap { tag in
+            Single.create { observer in
+                tag.sendMiFareISO7816Command(apdu) { data, sw1, sw2, error in
+                    if error != nil {
+                        observer(.error(error!))
+                    } else {
+                        observer(.success(RxNFCMiFareSendMiFareISO7816CommandResult(
+                            data: data,
+                            sw1: sw1,
+                            sw2: sw2
+                        )))
+                    }
+                }
+                return Disposables.create()
+            }
+        }
+    }
+    
 }
