@@ -33,6 +33,7 @@
 		E6A6ACC624C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ACC524C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift */; };
 		E6A6ACC824C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ACC724C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift */; };
 		E6A6ADD824C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ADD724C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift */; };
+		E6A6AE1024C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6AE0F24C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift */; };
 		E6BF06EC249C9D82007E84D3 /* RxCoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		E6A6ACC524C1D4C10069F67B /* RxNFCFeliCaRequestSystemCodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaRequestSystemCodeResult.swift; sourceTree = "<group>"; };
 		E6A6ACC724C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaResetModeResult.swift; sourceTree = "<group>"; };
 		E6A6ADD724C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaSendFeliCaCommandResult.swift; sourceTree = "<group>"; };
+		E6A6AE0F24C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCMiFareSendMiFareCommandResult.swift; sourceTree = "<group>"; };
 		E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCoreNFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BF06EB249C9D82007E84D3 /* RxCoreNFCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCoreNFCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,6 +220,7 @@
 		E6A6ADD524C302F80069F67B /* NFCMiFareTag */ = {
 			isa = PBXGroup;
 			children = (
+				E6A6AE0E24C5E1990069F67B /* Entity */,
 				E6A2A61B24A631B400282503 /* NFCMiFareTag+Rx.swift */,
 			);
 			path = NFCMiFareTag;
@@ -229,6 +232,14 @@
 				E6A2A61E24A7878000282503 /* NFCTag+Rx.swift */,
 			);
 			path = NFCTag;
+			sourceTree = "<group>";
+		};
+		E6A6AE0E24C5E1990069F67B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E6A6AE0F24C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		E6BF06D8249C9D82007E84D3 = {
@@ -378,6 +389,7 @@
 				E6A2A61624A6275500282503 /* NFCISO7816Tag+Rx.swift in Sources */,
 				E6A6ADD824C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift in Sources */,
 				E6A2A60E24A377A300282503 /* RxNFCTagReaderSessionEvent.swift in Sources */,
+				E6A6AE1024C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift in Sources */,
 				E6A2A7F824C1646000282503 /* RxNFCFeliCaRequestServiceV2Result.swift in Sources */,
 				E6A2A61A24A62D5400282503 /* RxNFCReaderError.swift in Sources */,
 				E6A6ACC824C1D5450069F67B /* RxNFCFeliCaResetModeResult.swift in Sources */,
