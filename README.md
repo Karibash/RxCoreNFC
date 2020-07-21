@@ -16,7 +16,7 @@
 
 - [ ] NFCTagReaderSession
   - [x] NFCFeliCaTag
-  - [ ] NFCMiFareTag
+  - [x] NFCMiFareTag
   - [ ] NFCISO15693Tag
   - [ ] NFCISO7816Tag
 - [ ] NFCNDEFReaderSession
