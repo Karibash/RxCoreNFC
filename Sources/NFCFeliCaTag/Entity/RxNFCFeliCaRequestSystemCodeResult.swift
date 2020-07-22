@@ -10,5 +10,5 @@ import Foundation
 
 @available(iOS 13.0, *)
 public struct RxNFCFeliCaRequestSystemCodeResult {
-    let systemCodeList: [Data]
+    public let systemCodeList: [Data]
 }

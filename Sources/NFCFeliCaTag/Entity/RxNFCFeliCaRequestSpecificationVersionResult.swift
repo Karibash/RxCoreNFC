@@ -10,7 +10,7 @@ import Foundation
 
 @available(iOS 13.0, *)
 public struct RxNFCFeliCaRequestSpecificationVersionResult {
-    let statusFlag: RxNFCFeliCaStatusFlag
-    let basicVersion: Data
-    let optionVersion: Data
+    public let statusFlag: RxNFCFeliCaStatusFlag
+    public let basicVersion: Data
+    public let optionVersion: Data
 }

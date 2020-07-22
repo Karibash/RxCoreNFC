@@ -10,6 +10,6 @@ import Foundation
 
 @available(iOS 13.0, *)
 public struct RxNFCFeliCaPollingResult {
-    let manufactureParameter: Data
-    let requestData: Data
+    public let manufactureParameter: Data
+    public let requestData: Data
 }

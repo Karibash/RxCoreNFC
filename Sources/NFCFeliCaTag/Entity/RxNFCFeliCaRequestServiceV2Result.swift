@@ -11,8 +11,8 @@ import CoreNFC
 
 @available(iOS 13.0, *)
 public struct RxNFCFeliCaRequestServiceV2Result {
-    let statusFlag: RxNFCFeliCaStatusFlag
-    let encryptionIdentifier: EncryptionId
-    let nodeKeyVersionListAES: [Data]
-    let nodeKeyVersionListDES: [Data]
+    public let statusFlag: RxNFCFeliCaStatusFlag
+    public let encryptionIdentifier: EncryptionId
+    public let nodeKeyVersionListAES: [Data]
+    public let nodeKeyVersionListDES: [Data]
 }
