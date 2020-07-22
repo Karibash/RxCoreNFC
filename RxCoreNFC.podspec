@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name               = "RxCoreNFC"
-  spec.version            = "1.1.0"
+  spec.version            = "1.1.1"
   spec.summary            = "Reactive extension for the CoreNFC."
   spec.description        = <<-DESC
   Reactive extension for the CoreNFC.
