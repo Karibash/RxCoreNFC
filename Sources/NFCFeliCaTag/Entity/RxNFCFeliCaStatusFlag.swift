@@ -10,6 +10,6 @@ import Foundation
 
 @available(iOS 13.0, *)
 public struct RxNFCFeliCaStatusFlag {
-    let statusFlag1: Int
-    let statusFlag2: Int
+    public let statusFlag1: Int
+    public let statusFlag2: Int
 }

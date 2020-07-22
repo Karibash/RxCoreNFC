@@ -10,5 +10,5 @@ import Foundation
 
 @available(iOS 13.0, *)
 public struct RxNFCMiFareSendMiFareCommandResult {
-    let data: Data
+    public let data: Data
 }

@@ -10,5 +10,5 @@ import Foundation
 
 @available(iOS 13.0, *)
 public struct RxNFCFeliCaRequestServiceResult {
-    let nodeKeyVersionList: [Data]
+    public let nodeKeyVersionList: [Data]
 }
