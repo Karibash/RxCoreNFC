@@ -17,8 +17,8 @@
 - [ ] NFCTagReaderSession
   - [x] NFCFeliCaTag
   - [x] NFCMiFareTag
+  - [x] NFCISO7816Tag
   - [ ] NFCISO15693Tag
-  - [ ] NFCISO7816Tag
 - [ ] NFCNDEFReaderSession
 - [ ] NFCVASReaderSession
 
@@ -98,6 +98,6 @@ Feel free to check [issues page](https://github.com/Karibash/RxCoreNFC/issues) i
 
 ## 📝 License
 
-Copyright © 2019 [@Karibash](https://twitter.com/karibash).
+Copyright © 2020 [@Karibash](https://twitter.com/karibash).
 
 This project is [```MIT```](https://github.com/Karibash/RxCoreNFC/blob/master/LICENSE) licensed.
