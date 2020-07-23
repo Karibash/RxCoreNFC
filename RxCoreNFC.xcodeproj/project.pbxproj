@@ -35,6 +35,7 @@
 		E6A6ADD824C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6ADD724C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift */; };
 		E6A6AE1024C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6AE0F24C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift */; };
 		E6A6AE1224C6AB640069F67B /* RxNFCMiFareSendMiFareISO7816CommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6AE1124C6AB640069F67B /* RxNFCMiFareSendMiFareISO7816CommandResult.swift */; };
+		E6A6AE1524C7C47C0069F67B /* RxNFCISO7816SendCommandResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6AE1424C7C47C0069F67B /* RxNFCISO7816SendCommandResult.swift */; };
 		E6BF06EC249C9D82007E84D3 /* RxCoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		E6A6ADD724C46CFA0069F67B /* RxNFCFeliCaSendFeliCaCommandResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCFeliCaSendFeliCaCommandResult.swift; sourceTree = "<group>"; };
 		E6A6AE0F24C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCMiFareSendMiFareCommandResult.swift; sourceTree = "<group>"; };
 		E6A6AE1124C6AB640069F67B /* RxNFCMiFareSendMiFareISO7816CommandResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCMiFareSendMiFareISO7816CommandResult.swift; sourceTree = "<group>"; };
+		E6A6AE1424C7C47C0069F67B /* RxNFCISO7816SendCommandResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNFCISO7816SendCommandResult.swift; sourceTree = "<group>"; };
 		E6BF06E2249C9D82007E84D3 /* RxCoreNFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCoreNFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BF06EB249C9D82007E84D3 /* RxCoreNFCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCoreNFCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 		E6A6ADD324C302D30069F67B /* NFCISO7816Tag */ = {
 			isa = PBXGroup;
 			children = (
+				E6A6AE1324C7C45C0069F67B /* Entity */,
 				E6A2A61524A6275500282503 /* NFCISO7816Tag+Rx.swift */,
 			);
 			path = NFCISO7816Tag;
@@ -241,6 +244,14 @@
 			children = (
 				E6A6AE0F24C5E1B60069F67B /* RxNFCMiFareSendMiFareCommandResult.swift */,
 				E6A6AE1124C6AB640069F67B /* RxNFCMiFareSendMiFareISO7816CommandResult.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E6A6AE1324C7C45C0069F67B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E6A6AE1424C7C47C0069F67B /* RxNFCISO7816SendCommandResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6A2A62324AB4E9F00282503 /* RxNFCTagReaderSession+Rx.swift in Sources */,
+				E6A6AE1524C7C47C0069F67B /* RxNFCISO7816SendCommandResult.swift in Sources */,
 				E6A2A61824A62CDC00282503 /* NFCISO15693Tag+Rx.swift in Sources */,
 				E6A2A61424A6271000282503 /* NFCFeliCaTag+Rx.swift in Sources */,
 				E6A2A61F24A7878000282503 /* NFCTag+Rx.swift in Sources */,
@@ -561,7 +573,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = karibash.RxCoreNFC;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -593,7 +605,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = karibash.RxCoreNFC;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
