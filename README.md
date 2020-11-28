@@ -9,7 +9,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/RxCoreNFC?style=flat&logo=apple)](http://cocoapods.org/pods/RxCoreNFC)
 [![License](https://img.shields.io/github/license/Karibash/RxCoreNFC?style=flat)](https://github.com/Karibash/RxCoreNFC/blob/master/LICENSE)
 
-[![Github](https://img.shields.io/github/followers/Karibash?label=Follow&logo=github&style=social)](https://github.com/Karibash?tab=following)
+[![Github](https://img.shields.io/github/followers/Karibash?label=Follow&logo=github&style=social)](https://github.com/Karibash?tab=followers)
 [![Twitter](https://img.shields.io/twitter/follow/Karibash?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=Karibash)
 
 ## 🔧 Features
